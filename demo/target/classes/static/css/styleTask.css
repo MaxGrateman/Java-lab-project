@@ -1,0 +1,55 @@
+.section_container {
+    width: 1200px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+}
+
+.logout_button {
+    width: 200px;
+    margin-top: 10px;
+}
+
+.task_desk {
+    margin-top: 15px;
+    padding: 10px;
+}
+
+.task_form {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 600px;
+    margin-top: 20px;
+}
+
+.main_container {
+    width: 1000px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.task_input {
+    border-radius: 20px;
+    border: none;
+    padding: 5px;
+    outline: none;
+    width: 100px;
+}
+
+.task_button {
+    width: 120px;
+}
+
+.pagination {
+    width: 1000px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.search_input {
+    width: 200px;
+}

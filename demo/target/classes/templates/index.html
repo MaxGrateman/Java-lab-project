@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/styleTask.css">
+    <title>My Home Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: transparent;
+            color: white;
+            padding: 15px 10px;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: transparent;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        div {
+            width: 100%;
+        }
+
+        .button_logout {
+            padding: 3px;
+        }
+
+        
+    </style>
+    <script src="/js/taskHandler.js" defer></script>
+    <script src="/js/tasks.js" defer></script>
+</head>
+<body>
+    <section class="section_container">
+        <header>
+            <h1>Welcome to My Home Page</h1>
+        </header>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <main class="main_container">
+            <div id="profile" class="profile_container">
+                <h2>Welcome, <span th:text="${username}">User</span></h2>
+                <p>Your email: <span th:text="${email}">user@example.com</span></p>
+                <form th:action="@{/logout}" method="post" class="logout_button">
+                    <button class="button_logout" type="submit">Logout</button>
+                </form>
+            </div>
+            <div class="task-controls">
+                <input class="search_input" type="text" id="searchInput" placeholder="Search tasks..." />
+                <select id="filterDropdown" class="task_input">
+                    <option value="">Filter by Status</option>
+                    <option value="Pending">Pending</option>
+                    <option value="In Progress">In Progress</option>
+                    <option value="Completed">Completed</option>
+                </select>
+                <button id="searchButton" class="task_button">Search</button>
+            </div>
+            <div id="task-desk" class="task_desk">
+                <h2>Your Tasks</h2>
+                <ul id="task-list"></ul>
+                <form id="add-task-form" class="task_form">
+                    <input class="task_input" id="task-title" placeholder="Title" required />
+                    <input class="task_input" id="task-desc" placeholder="Description"/>
+                    <input class="task_input" type="date" id="task-due-date" required />
+                    <select id="task-priority" class="task_input">
+                        <option value="High">High</option>
+                        <option value="Medium">Medium</option>
+                        <option value="Low">Low</option>
+                    </select>
+                    <button type="submit" class="task_button">Add Task</button>
+                </form>
+            </div>
+        </main>
+    </section>
+</body>
+</html>
